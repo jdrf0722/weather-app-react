@@ -15,11 +15,11 @@ function TemperatureAndDetails({weather : {details, icon, temp, temp_min, temp_m
       <div className="flex items-center justify-center py-6 text-xl text-cyan-300">
         <p>{details}</p>
       </div>
-      <div className="flex flex-row items-center justify-between text-white py-3">
+      <div className="flex flex-row items-center justify-between text-white py-3 px-8 sm:px-0">
         <img
           src={iconUrlFromCode(icon)}
           alt=""
-          className="w-20"
+          className="w-20 hidden msm:block"
         />
         <p className="text-3xl sm:text-5xl">{`${temp.toFixed()}°`}</p>
         <div className="flex flex-col space-y-2">
@@ -43,7 +43,7 @@ function TemperatureAndDetails({weather : {details, icon, temp, temp_min, temp_m
         </div>
       </div>
 
-      <div className="flex flex-row items-center justify-center space-x-2 text-white text-sm py-3">
+      <div className="flex flex-row items-center justify-center space-x-2 text-white text-xs sm:text-sm py-3">
         <UilSun />
         <p className="font-light">
           Rise: <span className="font-medium ml-1">{formatToLocalTime(sunrise, timezone, 'hh:mm a' )} </span>
