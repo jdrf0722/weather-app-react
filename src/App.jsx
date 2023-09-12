@@ -11,6 +11,7 @@ function App() {
   const [query, setQuery] = useState({ q: "Republic of Costa Rica" });
   const [units, setUnits] = useState("metric");
   const [weather, setWeather] = useState(null);
+  const [spinner, setSpinnner] = useState(false);
 
   useEffect(() => {
     const fetchWeather = async () => {
@@ -34,7 +35,7 @@ function App() {
   return (
     <>
       <div
-        className={`mx-auto max-w-screen-md md:mt-4 py-5 px-5 sm:px-32 bg-gradient-to-br h-[52rem] shadow-xl shadow-gray-400 ${formatBackground()}`}
+        className={`mx-auto max-w-screen-md md:mb-4 md:mt-4 py-5 px-5 sm:px-32 bg-gradient-to-br h-[52rem] shadow-xl shadow-gray-400 ${formatBackground()}`}
       >
         <TopButtons setQuery={setQuery} />
         <Inputs setQuery={setQuery} units={units} setUnits={setUnits} />
