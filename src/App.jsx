@@ -14,7 +14,6 @@ function App() {
   useEffect(() => {
     const fetchWeather = async () => {
       await getFormattedWeatherData({ ...query, units }).then((data) => {
-        console.log(data)
         setWeather(data);
       });
     };
@@ -32,7 +31,7 @@ function App() {
 
   return (
     <>
-      <div className={`mx-auto max-w-screen-md mt-4 py-5 px-32 bg-gradient-to-br h-fit shadow-xl shadow-gray-400 ${formatBackground()}`}>
+      <div className={`mx-auto max-w-screen-md mt-4 py-5 px-5 sm:px-32 bg-gradient-to-br h-fit shadow-xl shadow-gray-400 ${formatBackground()}`}>
         <TopButtons setQuery={setQuery} />
         <Inputs setQuery={setQuery} units={units} setUnits={setUnits} />
 
