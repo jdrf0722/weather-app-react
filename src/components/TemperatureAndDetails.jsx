@@ -19,7 +19,7 @@ function TemperatureAndDetails({weather : {details, icon, temp, temp_min, temp_m
         <img
           src={iconUrlFromCode(icon)}
           alt=""
-          className="w-20 hidden msm:block"
+          className="w-14 hidden msm:block sm:w-20"
         />
         <p className="text-3xl sm:text-5xl">{`${temp.toFixed()}°`}</p>
         <div className="flex flex-col space-y-2">

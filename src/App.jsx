@@ -11,7 +11,6 @@ function App() {
   const [query, setQuery] = useState({ q: "Republic of Costa Rica" });
   const [units, setUnits] = useState("metric");
   const [weather, setWeather] = useState(null);
-  const [spinner, setSpinnner] = useState(false);
 
   useEffect(() => {
     const fetchWeather = async () => {
