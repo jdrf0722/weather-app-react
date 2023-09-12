@@ -4,7 +4,8 @@ import { UilSearch, UilLocationPoint } from "@iconscout/react-unicons";
 function Inputs({ setQuery, units, setUnits }) {
   const [city, setCity] = useState("");
 
-  const handleSearchClick = () => {
+  const handleSearchClick = (e) => {
+    e.preventDefault();
     if (city !== "") setQuery({ q: city });
   };
 
@@ -29,25 +30,27 @@ function Inputs({ setQuery, units, setUnits }) {
 
   return (
     <div className="flex flex-row justify-center my-6">
-      <div className="flex flex-row w-3/4 items-center justify-center space-x-2 sm:space-x-4">
+      <form
+        onSubmit={handleSearchClick}
+        className="flex flex-row w-3/4 items-center justify-center space-x-2 sm:space-x-4"
+      >
         <input
           value={city}
           onChange={(e) => setCity(e.currentTarget.value)}
           type="text"
+          autoFocus
           className="text-base sm:text-xl font-light p-2 focus:outline-none w-full  shadow-xl capitalize placeholder:lowercase"
           placeholder="Search for city..."
         />
-        <UilSearch
-          size={25}
-          className="text-white cursor-pointer transition ease-out hover:scale-125"
-          onClick={handleSearchClick}
-        />
+        <button className="text-white cursor-pointer transition ease-out hover:scale-125">
+          <UilSearch size={20} />
+        </button>
         <UilLocationPoint
           size={25}
           className="text-white cursor-pointer transition ease-out hover:scale-125"
           onClick={handleLocationClick}
         />
-      </div>
+      </form>
 
       <div className="flex felx-row w-1/4 items-center justify-center">
         <button
